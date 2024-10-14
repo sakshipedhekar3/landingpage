@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    height: 50px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 30px; 
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    padding: 5px 10px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px; 
+    background-color: #e3ca22; 
+    left: 0;
+    bottom: -5px; 
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+header {
+    color: white;
+    padding: 0px;
+    text-align: right;
+}
+
+.experts-section {
+    background-image: url('C:/Users/Victus/Desktop/bg1.jpg'); 
+    color: white;
+    padding: 150px;
+    margin: 0;
+    font-size: 50px;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+.experts-section .btn {
+    background-color: #e3ca22;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.experts-section .btn:hover {
+    background-color: black;
+}
+
+p {
+    background-image: url('C:/Users/muska/Downloads/second/b6.jpeg'); 
+    color: black;
+    padding: 20px;
+    margin: 0;
+    background-size: cover;
+    text-align: center;
+}
+
+p .center
+{
+}
+
+.intro {
+    padding: 50px 20px;
+    background-image: url('C:/Users/muska/Downloads/i1a.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #eee;
+    text-align: center;
+}
+
+.intro .btn {
+    background-color: #e3ca22;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.intro .btn:hover {
+    background-color: black;
+}
+
+.image-row {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 20px 0;
+}
+
+.img-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.img-container {
+    text-align: center;
+    flex: 1;
+}
+
+.img-container img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.img-container span {
+    display: block;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+}
+
+.image-container {
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    display: inline-block;
+}
+
+.image-container img {
+    max-width: 150px;
+    height: auto;
+}
+
+.image-container img:hover {
+    transform: scale(1.2); 
+}
+
+.image-container span {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: footlight mt light;
+}
+
+.description {
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+}
+
+article {
+    position: relative;
+    padding: 20px;
+    background-image:url('C:/Users/Victus/Desktop/bg6.jpg');
+    background-size: cover;
+    color: black;
+}
+
+.about-us {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    background-image: url('C:/Users/Victus/Desktop/bg6.jpg');
+    background-size: cover;
+    color: black;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.about-content {
+    position: relative;
+    padding: 20px;
+}
+
+.about-us-image {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.about-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px; 
+    font-weight: bold; 
+    line-height: 1.6; 
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.btn {
+    background-color: #e3ca22;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 10px;
+}
+
+.image-grid h2 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-grid .grid-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+
+.image-grid .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.image-grid .grid-item h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.image-grid .grid-item em {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.center {
+    font-size: 50px;
+    margin-bottom: 20px; 
+}
+
+.service-section {
+    padding: 50px 20px;
+    background-image:url('C:/Users/muska/Downloads/second/b6.jpeg');
+    text-align: center;
+}
+
+.service-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 18%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    color: black;
+    margin: 10px 0;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #555;
+}
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 10px;
+    gap: 0; /* No gap between the grid items */
+}
+
+.image-grid .grid-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    border: 2px solid white; /* White border around each grid item */
+    border-collapse: collapse; /* Make borders look continuous */
+    position: relative;
+}
+
+.image-grid .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.image-grid .grid-item h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.image-grid .grid-item em {
+    font-size: 12px;
+    color: #aaa;
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<ul>
+    <li><a href="#advantages"><b> Why US</b></a></li>
+    <li><a href="#us"><b>About</b></a></li>
+    <li><a href="#services"><b>Service</b></a></li>
+    <li><a href="#portfolio"><b>Portfolio</b></a></li>
+    <li><a href="pro.html"><b>Process</b></a></li>
+    <li><a href="rev.html"><b>Review</b></a></li>
+    <li><a href="skil.html"><b>Our Skills</b></a></li>
+    <li><a href="ctc.html"><b>Contact Us</b></a></li>
+</ul>
+</nav>
+</header>
+
+<section class="experts-section">
+    <b>WE ARE EXPERTS!!</b><br><br>
+    <a href="abt.html" class="btn">Read More</a>
+</section>
+
+<p id="advantages">
+<b>
+<span class="center">OUR</span> <span class="center" style="color: red;"> &nbsp;ADVANTAGES</span><br></b>
+
+    <span class="image-row">
+        <span class="image-container">
+            <img src="C:/Users/Victus/Desktop/p2 bidea.png">
+            <span>Innovation</span>
+            <span class="description">We bring fresh ideas and unique solutions.</span>
+        </span>
+        <span class="image-container">
+            <img src="C:/Users/Victus/Desktop/p2 btham.png">
+            <span>Quality</span>
+            <span class="description">Our products meet the highest standards.</span>
+        </span>
+        <span class="image-container">
+            <img src="C:/Users/Victus/Desktop/p2clock.jpg">
+            <span>Experience</span>
+            <span class="description">Years of expertise in the industry.</span>
+        </span>
+        <span class="image-container">
+            <img src="C:/Users/Victus/Desktop/p2client.png">
+            <span>Happy Client</span>
+            <span class="description">We prioritize customer satisfaction.</span>
+        </span>
+        <span class="image-container">
+            <img src="C:/Users/Victus/Desktop/p2supprot.png">
+            <span>Support</span>
+            <span class="description">24/7 support for all our clients.</span>
+        </span>
+    </span>
+</p>
+
+
+<article class="about-us" id="us">
+    <div class="about-title">
+        <span class="center" style="color: white;">ABOUT &nbsp;US</span>
+    </div>
+    <div class="about-content">
+        <center><img src="C:/Users/Victus/Desktop/p2 meet.webp" width=600px; height=300px;>
+        <section class="about-text">
+            <font color="white">Samsung follows a simple business philosophy:<br>
+            To devote its talent and technology to creating superior products and<br> services that contribute to a better global society.<br>
+            To achieve this, Samsung sets a high value on its people and technologies.</font>
+        </section>
+      <center>  <a href="abt.html" class="btn">Read More</a></center>
+    </div>
+</article>
+
+<section class="service-section" id="services">
+    <h2>OUR SERVICES</h2>
+    <div class="service-grid">
+        <div class="service-item">
+            <img src="C:/Users/Victus/Desktop/p2 star.jpg" alt="Service 1" width="100" height="100">
+            <h3>Power On?</h3>
+            <p>Device not powering on?</p>
+        </div>
+        <div class="service-item">
+            <img src="C:/Users/Victus/Desktop/p2 star.jpg" alt="Service 2" width="100" height="100">
+            <h3>Sound Problem?</h3>
+            <p>Having difficulty with the audio on your device?</p>
+        </div>
+        <div class="service-item">
+            <img src="C:/Users/Victus/Desktop/p2 star.jpg" alt="Service 3" width="100" height="100">
+            <h3>Accessories</h3>
+            <p>Need help with something that connects to your Samsung phone?</p>
+        </div>
+        <div class="service-item">
+            <img src="C:/Users/Victus/Desktop/p2 star.jpg"alt="Service 4" width="100" height="100">
+            <h3>Software</h3>
+            <p>Device running slow or apps not working correctly?</p>
+        </div>
+        <div class="service-item">
+            <img src="C:/Users/Victus/Desktop/p2 star.jpg" alt="Service 5"  width="100" height="100">
+            <h3>Charging / Battery</h3>
+            <p>Device not charging or battery is draining quickly?</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="image-grid" id="portfolio">
+    <h2>OUR PORTFOLIO</h2>
+        <img src="C:/Users/Victus/Desktop/p2 brnd.jpg" width=1480px; height=600px;>
+       </section>
+
+<script>
+    window.onscroll = function() {toggleSticky()};
+
+    var header = document.querySelector("header");
+    var sticky = header.offsetTop;
+
+    function toggleSticky() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
+</body>
+</html>
